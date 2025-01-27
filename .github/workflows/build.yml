@@ -8,16 +8,21 @@ jobs:
   android:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-      - run: npm ci
-      - run: cd android && ./gradlew assembleRelease
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+          yarn-version: 1.x
+      - run: yarn install --frozen-lockfile
+      - run: yarn android:build
 
   ios:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-      - run: npm ci
-      - run: cd ios && pod install
-      - run: xcodebuild -workspace AuthApp.xcworkspace -scheme AuthApp -sdk iphonesimulator
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+          yarn-version: 1.x
+      - run: yarn install --frozen-lockfile
+      - run: yarn ios:build
