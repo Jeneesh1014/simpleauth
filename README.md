@@ -1,4 +1,4 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+<!-- This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
 
@@ -94,4 +94,22 @@ To learn more about React Native, take a look at the following resources:
 - [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native. -->
+
+# AuthApp
+
+Authentication app with React Native
+
+## Setup
+
+1. Clone repository
+2. Install dependencies: `npm install`
+3. iOS: `cd ios && pod install`
+4. Start Metro: `npx react-native start`
+5. Run Android: `npx react-native run-android`
+6. Run iOS: `npx react-native run-ios`
+
+## CI/CD Pipeline
+
+- Linting and tests run on every push
+- Production builds created on push to main branch
