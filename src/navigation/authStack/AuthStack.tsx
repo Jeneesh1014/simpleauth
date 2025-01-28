@@ -5,7 +5,6 @@ import {
 import React, {memo} from 'react';
 import {AuthStackParamList} from '../../@types/navigation';
 import Login from '../../screens/auth/login/Login';
-import Register from '../../screens/auth/register/Register';
 
 const AuthStack = createStackNavigator<AuthStackParamList>();
 const Authstack: React.FC = () => {
@@ -16,7 +15,6 @@ const Authstack: React.FC = () => {
         cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
       }}>
       <AuthStack.Screen name="Login" component={Login} />
-      <AuthStack.Screen name="Register" component={Register} />
     </AuthStack.Navigator>
   );
 };

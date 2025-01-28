@@ -3,7 +3,6 @@ import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {NavigationContainer} from '@react-navigation/native';
 import {Provider} from 'react-redux';
 import {store} from './redux/app/store';
-import Login from './screens/auth/login/Login';
 import MainStack from './navigation/MainStack/MainStack';
 
 const App = () => {

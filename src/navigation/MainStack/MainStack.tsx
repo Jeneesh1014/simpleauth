@@ -3,27 +3,23 @@ import {
   createStackNavigator,
 } from '@react-navigation/stack';
 import React, {memo, useEffect} from 'react';
-import {AppState} from 'react-native';
-import {useAppDispatch} from '../../redux/app/store';
 import {MainStackParamList} from '../../@types/navigation';
+import Home from '../../screens/home/Home';
 import SpashScreen from '../../screens/splashscreen/SpashScreen';
 import AuthStack from '../authStack/AuthStack';
+import {useAppDispatch} from '../../redux/app/store';
+import {getIsLogin, getUserInfo} from '../../redux/action/users/auth';
 const Stack = createStackNavigator<MainStackParamList>();
 const Mainstack: React.FC = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    const subscription = AppState.addEventListener('change', nextAppState => {
-      if (nextAppState === 'background') {
-        console.log('12334');
-      } else {
-        console.log('3329');
-      }
-    });
-    return () => {
-      subscription.remove();
+    const getInfo = () => {
+      dispatch(getUserInfo());
+      dispatch(getIsLogin());
     };
-  }, [dispatch]);
+    getInfo();
+  }, []);
   return (
     <Stack.Navigator
       screenOptions={{
@@ -32,6 +28,7 @@ const Mainstack: React.FC = () => {
       }}>
       <Stack.Screen name="SplashScreen" component={SpashScreen} />
       <Stack.Screen name="AuthStack" component={AuthStack} />
+      <Stack.Screen name="Home" component={Home} />
     </Stack.Navigator>
   );
 };
